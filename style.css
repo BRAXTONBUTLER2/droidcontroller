@@ -1,0 +1,253 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1c1c1c, #2f2f2f);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 720px;
+  width: 100%;
+  background-color: #222222cc;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.8);
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+}
+
+.status-text {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d6a21a;
+  min-height: 1.2rem;
+}
+
+.delete-buttons-container {
+  margin-top: 1rem;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Delete Mode Button */
+
+.delete-mode-btn {
+  position: static;
+  background-color: #7a3e3e;
+  color: #f2dede;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(122, 62, 62, 0.7);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.delete-mode-btn:hover,
+.delete-mode-btn:focus-visible {
+  background-color: #612b2b;
+  outline: none;
+  box-shadow: 0 10px 25px rgba(97, 43, 43, 0.85);
+}
+
+/* Confirm Delete Button */
+.confirm-delete-btn {
+  position: static;
+  background-color: #b03030;
+  color: white;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 7px 18px rgba(176, 48, 48, 0.85);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.confirm-delete-btn:hover,
+.confirm-delete-btn:focus-visible {
+  background-color: #8a2424;
+  outline: none;
+  box-shadow: 0 10px 25px rgba(138, 36, 36, 1);
+}
+
+.confirm-delete-btn.hidden {
+  display: none;
+}
+
+.btn {
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+  outline-offset: 3px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.6);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #d6a21a;
+}
+
+.connect-btn {
+  background-color: #2c5985;
+  color: #e6e6e6;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 8px 15px rgba(44, 89, 133, 0.7);
+}
+
+.connect-btn:hover,
+.connect-btn:focus-visible {
+  background-color: #254d74;
+  box-shadow: 0 10px 20px rgba(37, 77, 116, 0.85);
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.control-btn {
+  background-color: #3a5a3c;
+  color: #ddd;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(58, 90, 60, 0.6);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.control-btn:hover,
+.control-btn:focus-visible {
+  background-color: #305030;
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(48, 80, 48, 0.75);
+}
+
+/* Buttons selected for deletion */
+.control-btn.delete-selected {
+  background-color: #d14040 !important;
+  box-shadow: 0 8px 22px rgba(209, 64, 64, 0.9) !important;
+  transform: scale(1.05);
+  color: white !important;
+}
+
+.add-button-section {
+  width: 100%;
+  max-width: 400px;
+}
+
+.add-btn {
+  background-color: #a67c1a;
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f0e9d2;
+  box-shadow: 0 7px 18px rgba(166, 124, 26, 0.7);
+  margin-bottom: 1rem;
+}
+
+.add-btn:hover,
+.add-btn:focus-visible {
+  background-color: #8a6915;
+  box-shadow: 0 10px 25px rgba(138, 105, 21, 0.9);
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 0.5rem;
+}
+
+.add-form.hidden {
+  display: none;
+}
+
+.add-form input {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  background-color: #444;
+  color: #ddd;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.75);
+  transition: background-color 0.3s ease;
+}
+
+.add-form input:focus {
+  background-color: #555;
+  outline: none;
+  box-shadow: 0 0 8px #d6a21a;
+}
+
+.confirm-btn {
+  background-color: #6a4882;
+  padding: 14px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #e8dff0;
+  box-shadow: 0 6px 15px rgba(106, 72, 130, 0.7);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.confirm-btn:hover,
+.confirm-btn:focus-visible {
+  background-color: #593a72;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(89, 58, 114, 0.9);
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .control-btn {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}
