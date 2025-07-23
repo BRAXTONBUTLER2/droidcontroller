@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Droid Controller</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Droid Controller</h1>
+      <button id="connectBtn" class="btn connect-btn" aria-live="polite" aria-label="Connect to Bluetooth device">
+        Connect to Bluetooth
+      </button>
+      <p id="status" class="status-text">Not connected</p>
+
+      <div class="delete-buttons-container">
+        <button id="deleteModeBtn" class="btn delete-mode-btn" aria-pressed="false" title="Toggle Delete Mode">
+          🗑️ Delete Mode
+        </button>
+
+        <button id="confirmDeleteBtn" class="btn confirm-delete-btn hidden">
+          Confirm Delete
+        </button>
+      </div>
+    </header>
+
+    <section id="buttonsSection" class="buttons-grid" aria-label="Control buttons">
+      <button class="btn control-btn" data-code="wave">Wave</button>
+      <button class="btn control-btn" data-code="turn_head">Turn Head</button>
+      <button class="btn control-btn" data-code="dance">Dance</button>
+      <button class="btn control-btn" data-code="sentence1">Sentence 1</button>
+      <button class="btn control-btn" data-code="sentence2">Sentence 2</button>
+      <button class="btn control-btn" data-code="welcome_seq">Welcome Sequence</button>
+    </section>
+
+    <section class="add-button-section">
+      <button id="toggleAddForm" class="btn add-btn" aria-expanded="false" aria-controls="addForm">
+        + Add Button
+      </button>
+
+      <div id="addForm" class="add-form hidden">
+        <input id="btnNameInput" type="text" placeholder="Button name" />
+        <input id="btnCodeInput" type="text" placeholder="Bluetooth code" />
+        <button id="confirmAddBtn" class="btn confirm-btn">Confirm</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
