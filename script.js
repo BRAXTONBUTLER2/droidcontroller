@@ -72,9 +72,11 @@ function addButtonToDOM(name, code) {
 connectBtn.addEventListener('click', async () => {
   try {
     statusText.textContent = 'Requesting Bluetooth device...';
-    bluetoothDevice = await navigator.bluetooth.requestDevice({
-      filters: [{ services: [SERVICE_UUID] }]
-    });
+   bluetoothDevice = await navigator.bluetooth.requestDevice({
+  acceptAllDevices: true,
+  optionalServices: [SERVICE_UUID]
+});
+
     statusText.textContent = 'Connecting to GATT server...';
     const server = await bluetoothDevice.gatt.connect();
     statusText.textContent = 'Getting service...';
